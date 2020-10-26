@@ -27,6 +27,7 @@
 
 #define BOARD_INFO_NAME "Anycubic RAMPS 1.4"
 
+
 // Board labeled pins:
 
 #define TG_HEATER_BED_PIN                      8
@@ -50,6 +51,7 @@
 // Remap MOSFET pins to common usages:
 
 #define RAMPS_D10_PIN            TG_HEATER_0_PIN  // HEATER_0_PIN is always RAMPS_D10_PIN in pins_RAMPS.h
+
 
 #if HAS_MULTI_HOTEND                              // EEF and EEB
   #define RAMPS_D9_PIN           TG_HEATER_1_PIN
