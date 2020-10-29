@@ -477,7 +477,7 @@
 // Above this temperature the heater will be switched off.
 // This can protect components from overheating, but NOT from shorts and failures.
 // (Use MINTEMP for thermistor short/failure protection.)
-#define HEATER_0_MAXTEMP 275
+#define HEATER_0_MAXTEMP 245
 #define HEATER_1_MAXTEMP 275
 #define HEATER_2_MAXTEMP 275
 #define HEATER_3_MAXTEMP 275
@@ -485,7 +485,7 @@
 #define HEATER_5_MAXTEMP 275
 #define HEATER_6_MAXTEMP 275
 #define HEATER_7_MAXTEMP 275
-#define BED_MAXTEMP      150
+#define BED_MAXTEMP      120
 
 //===========================================================================
 //============================= PID Settings ================================
@@ -512,10 +512,16 @@
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
     // Chiron
-  #define DEFAULT_Kp 14.51
-  #define DEFAULT_Ki 0.86
-  #define DEFAULT_Kd 60.97	   
+ // #define DEFAULT_Kp 14.51
+ // #define DEFAULT_Ki 0.86
+ // #define DEFAULT_Kd 60.97	   
   #endif
+  //My Chiron PIDTEMP
+    #define DEFAULT_Kp 25.03
+    #define DEFAULT_Ki 1.45
+    #define DEFAULT_Kd 107.64
+
+
 #endif // PIDTEMP
 
 //===========================================================================
@@ -552,9 +558,15 @@
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
 // Chiron
-  #define DEFAULT_bedKp 83.15
-  #define DEFAULT_bedKi 11.78
-  #define DEFAULT_bedKd 146.74		   
+  //#define DEFAULT_bedKp 83.15
+  //#define DEFAULT_bedKi 11.78
+  //#define DEFAULT_bedKd 146.74	
+  	  
+// My Chiron PIDBED
+  #define DEFAULT_bedKp 50.41
+  #define DEFAULT_bedKi 9.61
+  #define DEFAULT_bedKd 176.20 
+
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
   //#define DEFAULT_bedKp 10.00
@@ -1003,7 +1015,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -32, -3, -2.15 }
+#define NOZZLE_TO_PROBE_OFFSET { -32, -3, -2.20 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
