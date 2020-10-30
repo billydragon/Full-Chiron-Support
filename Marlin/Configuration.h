@@ -519,9 +519,10 @@
  // #define DEFAULT_Ki 0.86
  // #define DEFAULT_Kd 60.97	 
  //My Chiron PIDTEMP
-    #define DEFAULT_Kp 22.50
-    #define DEFAULT_Ki 1.18
-    #define DEFAULT_Kd 107.38  
+    
+    #define DEFAULT_Kp 20.79
+    #define DEFAULT_Ki 1.03
+    #define DEFAULT_Kd 104.74
   #endif
   
 
@@ -566,9 +567,9 @@
   //#define DEFAULT_bedKd 146.74	
   	  
 // My Chiron PIDBED
-#define DEFAULT_bedKp 83.60
-#define DEFAULT_bedKi 16.46
-#define DEFAULT_bedKd 283.07
+#define DEFAULT_bedKp 37.27
+#define DEFAULT_bedKi 5.91
+#define DEFAULT_bedKd 156.75
 
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
