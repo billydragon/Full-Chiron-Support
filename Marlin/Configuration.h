@@ -135,7 +135,10 @@
 #define OUTAGECON_PIN                     58  // p93 F4
 #define OUTAGETEST_PIN                    79  // p8  E6
 #define X_MAX_PIN                         43
-#define X_MIN_PIN     21      //My PIN 3 Error
+//#define X_MIN_PIN     21      //My PIN 3 Error
+
+//#define SERVO0_PIN    6
+
 
 // Name displayed in the LCD "Ready" message and Info menu
 #define CUSTOM_MACHINE_NAME "Anycubic Chiron"
@@ -336,16 +339,16 @@
 #define PSU_NAME "MKS Power Supply"
 
 #if ENABLED(PSU_CONTROL)
-  #define PS_ON_PIN		12
+  #define PS_ON_PIN		21//12
   #define PSU_ACTIVE_STATE HIGH      // Set 'LOW' for ATX, 'HIGH' for X-Box
   
   #define PSU_DEFAULT_ON         // Keep power off until enabled directly with M80
-  #define PSU_POWERUP_DELAY 250   // (ms) Delay for the PSU to warm up to full power
+  #define PSU_POWERUP_DELAY 200   // (ms) Delay for the PSU to warm up to full power
 
-  #define PSU_POWERUP_GCODE  "M80"  // G-code to run after power-on (e.g., case light on)
+  //#define PSU_POWERUP_GCODE  "M80"  // G-code to run after power-on (e.g., case light on)
   //#define PSU_POWEROFF_GCODE "M81"  // G-code to run before power-off (e.g., case light off)
 
-  #define AUTO_POWER_CONTROL      // Enable automatic control of the PS_ON pin
+  //#define AUTO_POWER_CONTROL      // Enable automatic control of the PS_ON pin
   #if ENABLED(AUTO_POWER_CONTROL)
     #define AUTO_POWER_FANS         // Turn on PSU if fans need power
     #define AUTO_POWER_E_FANS
@@ -477,7 +480,7 @@
 // Above this temperature the heater will be switched off.
 // This can protect components from overheating, but NOT from shorts and failures.
 // (Use MINTEMP for thermistor short/failure protection.)
-#define HEATER_0_MAXTEMP 245
+#define HEATER_0_MAXTEMP 275
 #define HEATER_1_MAXTEMP 275
 #define HEATER_2_MAXTEMP 275
 #define HEATER_3_MAXTEMP 275
@@ -485,7 +488,7 @@
 #define HEATER_5_MAXTEMP 275
 #define HEATER_6_MAXTEMP 275
 #define HEATER_7_MAXTEMP 275
-#define BED_MAXTEMP      120
+#define BED_MAXTEMP      140
 
 //===========================================================================
 //============================= PID Settings ================================
@@ -514,13 +517,13 @@
     // Chiron
  // #define DEFAULT_Kp 14.51
  // #define DEFAULT_Ki 0.86
- // #define DEFAULT_Kd 60.97	   
+ // #define DEFAULT_Kd 60.97	 
+ //My Chiron PIDTEMP
+    #define DEFAULT_Kp 22.50
+    #define DEFAULT_Ki 1.18
+    #define DEFAULT_Kd 107.38  
   #endif
-  //My Chiron PIDTEMP
-    #define DEFAULT_Kp 25.03
-    #define DEFAULT_Ki 1.45
-    #define DEFAULT_Kd 107.64
-
+  
 
 #endif // PIDTEMP
 
@@ -563,15 +566,10 @@
   //#define DEFAULT_bedKd 146.74	
   	  
 // My Chiron PIDBED
-  #define DEFAULT_bedKp 50.41
-  #define DEFAULT_bedKi 9.61
-  #define DEFAULT_bedKd 176.20 
+#define DEFAULT_bedKp 83.60
+#define DEFAULT_bedKi 16.46
+#define DEFAULT_bedKd 283.07
 
-  // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
-  // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  //#define DEFAULT_bedKp 10.00
-  //#define DEFAULT_bedKi .023
-  //#define DEFAULT_bedKd 305.4
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -890,7 +888,7 @@
  *      - normally-closed switches to GND and D32.
  *      - normally-open switches to 5V and D32.
  */
-#define Z_MIN_PROBE_PIN 20 // Pin 2 is the Trigorilla default
+#define Z_MIN_PROBE_PIN 2 // Pin 2 is the Trigorilla default
 
 /**
  * Probe Type
@@ -922,8 +920,8 @@
 /**
  * Z Servo Probe, such as an endstop switch on a rotating arm.
  */
-#define Z_PROBE_SERVO_NR 0       // Defaults to SERVO 0 connector.
-#define Z_SERVO_ANGLES { 10, 90 } // Z Servo Deploy and Stow angles
+//#define Z_PROBE_SERVO_NR 0       // Defaults to SERVO 0 connector.
+//#define Z_SERVO_ANGLES { 10, 90 } // Z Servo Deploy and Stow angles
 
 /**
  * The BLTouch probe uses a Hall effect sensor and emulates a servo.
