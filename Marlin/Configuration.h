@@ -514,15 +514,15 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    // Chiron
- #define DEFAULT_Kp 14.51
-  #define DEFAULT_Ki 0.86
- #define DEFAULT_Kd 60.97	 
+  // Chiron factory
+ //#define DEFAULT_Kp 14.51
+ //#define DEFAULT_Ki 0.86
+ //#define DEFAULT_Kd 60.97	 
 
  //My Chiron PIDTEMP
-    //#define DEFAULT_Kp 20.79
-   // #define DEFAULT_Ki 1.03
-    //#define DEFAULT_Kd 104.74
+#define DEFAULT_Kp 12.97
+#define DEFAULT_Ki 0.61
+#define DEFAULT_Kd 69.32
   #endif
   
 
@@ -562,15 +562,17 @@
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
 // Chiron
-  #define DEFAULT_bedKp 83.15
-  #define DEFAULT_bedKi 11.78
-  #define DEFAULT_bedKd 146.74	
+  //#define DEFAULT_bedKp 83.15
+  //#define DEFAULT_bedKi 11.78
+  //#define DEFAULT_bedKd 146.74	
   	  
 // My Chiron PIDBED
 //#define DEFAULT_bedKp 37.27
 //#define DEFAULT_bedKi 5.91
 //#define DEFAULT_bedKd 156.75
-
+#define DEFAULT_bedKp 76.46
+#define DEFAULT_bedKi 14.82
+#define DEFAULT_bedKd 263.09
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
