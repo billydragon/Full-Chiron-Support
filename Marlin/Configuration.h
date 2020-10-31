@@ -345,7 +345,7 @@
   #define PSU_DEFAULT_ON         // Keep power off until enabled directly with M80
   #define PSU_POWERUP_DELAY 200   // (ms) Delay for the PSU to warm up to full power
 
-  //#define PSU_POWERUP_GCODE  "M80"  // G-code to run after power-on (e.g., case light on)
+  #define PSU_POWERUP_GCODE  "M80"  // G-code to run after power-on (e.g., case light on)
   //#define PSU_POWEROFF_GCODE "M81"  // G-code to run before power-off (e.g., case light off)
 
   //#define AUTO_POWER_CONTROL      // Enable automatic control of the PS_ON pin
@@ -356,7 +356,7 @@
     //#define AUTO_POWER_CHAMBER_FAN
     //#define AUTO_POWER_E_TEMP        50 // (°C) Turn on PSU over this temperature
     //#define AUTO_POWER_CHAMBER_TEMP  30 // (°C) Turn on PSU over this temperature
-    #define POWER_TIMEOUT 15*60
+    #define POWER_TIMEOUT 10*60
   #endif
 #endif
 
@@ -430,7 +430,7 @@
  *   998 : Dummy Table that ALWAYS reads 25°C or the temperature defined below.
  *   999 : Dummy Table that ALWAYS reads 100°C or the temperature defined below.
  */
-#define TEMP_SENSOR_0 5// Original    11	//100k beta 3950 1% thermistor (Used in Keenovo AC silicone mats and most Wanhao i3 machines) (4.7k pullup)
+#define TEMP_SENSOR_0 11	//100k beta 3950 1% thermistor (Used in Keenovo AC silicone mats and most Wanhao i3 machines) (4.7k pullup)
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
@@ -515,14 +515,14 @@
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
     // Chiron
- // #define DEFAULT_Kp 14.51
- // #define DEFAULT_Ki 0.86
- // #define DEFAULT_Kd 60.97	 
+ #define DEFAULT_Kp 14.51
+  #define DEFAULT_Ki 0.86
+ #define DEFAULT_Kd 60.97	 
+
  //My Chiron PIDTEMP
-    
-    #define DEFAULT_Kp 20.79
-    #define DEFAULT_Ki 1.03
-    #define DEFAULT_Kd 104.74
+    //#define DEFAULT_Kp 20.79
+   // #define DEFAULT_Ki 1.03
+    //#define DEFAULT_Kd 104.74
   #endif
   
 
@@ -562,14 +562,14 @@
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
 // Chiron
-  //#define DEFAULT_bedKp 83.15
-  //#define DEFAULT_bedKi 11.78
-  //#define DEFAULT_bedKd 146.74	
+  #define DEFAULT_bedKp 83.15
+  #define DEFAULT_bedKi 11.78
+  #define DEFAULT_bedKd 146.74	
   	  
 // My Chiron PIDBED
-#define DEFAULT_bedKp 37.27
-#define DEFAULT_bedKi 5.91
-#define DEFAULT_bedKd 156.75
+//#define DEFAULT_bedKp 37.27
+//#define DEFAULT_bedKi 5.91
+//#define DEFAULT_bedKd 156.75
 
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
