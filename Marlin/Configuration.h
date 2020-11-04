@@ -128,16 +128,13 @@
 
 // Choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
-  #define MOTHERBOARD BOARD_TRIGORILLA_14_11
+  #define MOTHERBOARD BOARD_TRIGORILLA_14
 #endif
 
 // Anycubic Chiron custom pin defs for the Trigorilla board fastio_1280.h 
 #define OUTAGECON_PIN                     58  // p93 F4
 #define OUTAGETEST_PIN                    79  // p8  E6
 #define X_MAX_PIN                         43
-//#define X_MIN_PIN     21      //My PIN 3 Error
-
-//#define SERVO0_PIN    6
 
 
 // Name displayed in the LCD "Ready" message and Info menu
@@ -339,7 +336,7 @@
 #define PSU_NAME "MKS Power Supply"
 
 #if ENABLED(PSU_CONTROL)
-  #define PS_ON_PIN		12
+  #define PS_ON_PIN		21 // Trigorilla Plus 
   #define PSU_ACTIVE_STATE HIGH      // Set 'LOW' for ATX, 'HIGH' for X-Box
   
   #define PSU_DEFAULT_ON         // Keep power off until enabled directly with M80
